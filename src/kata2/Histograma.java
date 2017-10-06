@@ -23,6 +23,10 @@ public class Histograma<T> {
         }
         return histogram;
     }
+
+    public ArrayList<T> getData() {
+        return data;
+    }
     
     
 }
