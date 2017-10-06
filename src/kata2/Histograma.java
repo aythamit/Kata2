@@ -7,20 +7,17 @@ import java.util.Map;
 
 public class Histograma {
    
-    public static final int NDATOS = 20;
+   
 
-    private ArrayList<Integer> data = new ArrayList();
+    private final ArrayList<Integer> data;
     
     
-    Histograma(){
+    Histograma(ArrayList<Integer> data){
+        this.data = data;
     }
 
     public Map<Integer, Integer> getHistogram() {
-      Map<Integer,Integer> histogram = new HashMap();
-      for(int i = 0; i < NDATOS; i++){
-            data.add( (int) (Math.random()* 10));
-        }
-      
+             Map<Integer,Integer> histogram = new HashMap();
        for(Integer i : data){
            histogram.put(i , histogram.containsKey(i) ? histogram.get(i) + 1 : 1 );
         }
