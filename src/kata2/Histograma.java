@@ -5,20 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Histograma {
+public class Histograma<T> {
    
    
 
-    private final ArrayList<Integer> data;
+    private final ArrayList<T> data;
     
     
-    Histograma(ArrayList<Integer> data){
+    Histograma(ArrayList<T> data){
         this.data = data;
     }
 
-    public Map<Integer, Integer> getHistogram() {
-             Map<Integer,Integer> histogram = new HashMap();
-       for(Integer i : data){
+    public Map<T, Integer> getHistogram() {
+             Map<T,Integer> histogram = new HashMap();
+       for(T i : data){
            histogram.put(i , histogram.containsKey(i) ? histogram.get(i) + 1 : 1 );
         }
         return histogram;
