@@ -19,9 +19,15 @@ public class Kata2 {
         }
         
         for(Integer i : data){
-            System.out.print(i + " ");
+            if(histogram.containsKey(i))
+                histogram.put(i, histogram.get(i) + 1);
+            else
+                histogram.put(i,1);
         }
-        System.out.println("");
+        System.out.println("Clave - Valor");
+        for (int key : histogram.keySet()) {
+            System.out.println(key + "  ==>  " + histogram.get(key));
+        }
     }
     
 }
